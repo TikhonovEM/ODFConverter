@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ODFConverter.PDFConverters;
+using ODFConverter.TagsReplacers;
 
 namespace ODFConverter
 {
@@ -9,11 +11,11 @@ namespace ODFConverter
     {
         public static void ReplaceTags(Stream inputStream, string extension, Dictionary<string, string> variables, ReplaceMode mode = ReplaceMode.AllMatches)
         {
-            var replacer = ODFTextReplacer.Create(extension);
+            var replacer = OdfTextReplacer.Create(extension);
             replacer.ReplaceTags(inputStream, variables, mode);
         }
 
-        public static Stream ConvertToPDF(Stream inputStream, string extension)
+        public static Stream ConvertToPdf(Stream inputStream, string extension)
         {
             var converter = BaseConverter.Create(extension);
             return converter.Convert(inputStream);

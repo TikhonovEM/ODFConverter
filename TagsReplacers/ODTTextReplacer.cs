@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace ODFConverter
+namespace ODFConverter.TagsReplacers
 {
-    internal class ODTTextReplacer : ODFTextReplacer
+    internal class OdtTextReplacer : OdfTextReplacer
     {
         public override void ReplaceTags(Stream inputStream, Dictionary<string, string> variables, ReplaceMode mode)
         {
@@ -33,7 +32,7 @@ namespace ODFConverter
 
                 using var writer = XmlWriter.Create(sb, settings);
                 contentEntryStream.Position = 0;
-                var reader = XmlReader.Create(contentEntryStream);
+                using var reader = XmlReader.Create(contentEntryStream);
                 while (reader.Read())
                 {
                     switch (reader.NodeType)

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ODFConverter
+﻿namespace ODFConverter.TagsReplacers
 {
     public enum ReplaceMode : byte
     {

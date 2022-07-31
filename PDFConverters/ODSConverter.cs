@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace ODFConverter
+namespace ODFConverter.PDFConverters
 {
-    internal class ODSConverter : BaseConverter
+    internal class OdsConverter : BaseConverter
     {
         public override Stream Convert(Stream inputStream)
         {

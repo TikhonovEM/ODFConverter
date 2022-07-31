@@ -1,14 +1,11 @@
-﻿using Gehtsoft.PDFFlow.Builder;
-using Gehtsoft.PDFFlow.Models.Enumerations;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.IO.Compression;
-using System.Text;
+using Gehtsoft.PDFFlow.Builder;
+using Gehtsoft.PDFFlow.Models.Enumerations;
 
-namespace ODFConverter
+namespace ODFConverter.PDFConverters
 {
-    internal class ODTConverter : BaseConverter
+    internal class OdtConverter : BaseConverter
     {
         public override Stream Convert(Stream inputStream)
         {

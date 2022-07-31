@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace ODFConverter
+namespace ODFConverter.PDFConverters
 {
     internal abstract class BaseConverter
     {
@@ -20,8 +18,8 @@ namespace ODFConverter
         {
             return extension.ToUpper() switch
             {
-                "ODT" => new ODTConverter(),
-                "ODS" => new ODSConverter(),
+                "ODT" => new OdtConverter(),
+                "ODS" => new OdsConverter(),
                 _ => throw new NotImplementedException(),
             };
         }
